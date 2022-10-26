@@ -109,21 +109,89 @@ public class Main {
         - Greater than or equal >=
         - Less than or equal <=
         - Not equal !=
-        * */
+        */
+
+        // Logical operators
+        // and - && - if both the expression on the
+        // left and on the right are true then it returns true
+        // if at least one of the expressions returns false it returns false.
+
+        // or - || - if at least one of the expressions returns true
+        // then it returns true
+        // if both expressions returns false then it returns false
 
         int num1 = 5;
         int num2 = 10;
 
-        boolean expression = num1 != num2;
+        boolean exp = num1 != num2; // returns true
 
-        if (num1 > num2) {
-            System.out.println("Num1 is greater!");
+        boolean meat = num1 == num2; // returns false
+        boolean fish = num1 > num2; // return false
+        boolean bread = num2 >= num1; // returns true
+
+        // true ->
+
+/*        if (bread) {
+            System.out.println("We got bread");
+        } else if (meat) {
+            System.out.println("We got meat");
+        } else if (fish) {
+            System.out.println("We got fish");
         } else {
-            System.out.println("Num2 is greater!");
+            System.out.println("We couldn't get any of the items");
+        }*/
+
+/*        if (bread && fish) { // true && false -> false
+            System.out.println("We got bread and fish");
+        } else if (meat && fish) { // false && false -> false
+            System.out.println("We got meat and fish");
+        } else if (meat || bread) { // false || true -> true
+            System.out.println("We got meat or bread");
+        }*/
+
+        // Initialize student score
+        int studentScore = -80;
+
+        // Initialize grade variable for use in remarks
+        String grade = "";
+
+        // Check student score and assign appropriate remark.
+        if (studentScore >= 0 && studentScore <= 40) {
+            grade = "F";
+            System.out.println("Student's grade: " + grade);
+        } else if (studentScore >= 41 && studentScore <= 50) {
+            grade = "D";
+            System.out.println("Student's grade: " + grade);
+        } else if (studentScore >= 51 && studentScore <= 60) {
+            grade = "C";
+            System.out.println("Student's grade: " + grade);
+        } else if (studentScore >= 61 && studentScore < 70) {
+            grade = "B";
+            System.out.println("Student's grade: " + grade);
+        } else if (studentScore >= 70 && studentScore < 100) {
+            grade = "A";
+            System.out.println("Student's grade: " + grade);
+        } else {
+            System.out.println("Invalid score");
         }
 
+        // When dealing with strings, it is advisable to use the
+        // .equals() method that comes with string variables to
+        // check equality instead of just using the primitive ==
+//        grade == "D"
+        if (grade.equals("D") || grade.equals("F")) {
+            System.out.println("You need to do better!");
+        } else if (grade.equals("C") || grade.equals("B")) {
+            System.out.println("Good Job, but you can improve");
+        } else if (grade.equals("A")) {
+            System.out.println("Excellent! Keep it up!");
+        } else {
+            System.out.println("Invalid grade");
+        }
 
-//        System.out.println(expression);
+//        System.out.println(false || false); // false
+
+//        Next Up: more on conditionals, switch and loops
 
     }
 }
